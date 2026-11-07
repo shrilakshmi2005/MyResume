@@ -1,7 +1,113 @@
-MyResume/
-│
-├── index.html
-├── style.css
-├── script.js
-├── profile.jpg
-└── resume.pdf
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="SHRI LAKSHMI G — Electronics and Communication Engineering student portfolio.">
+<title>SHRI LAKSHMI G</title>
+<style>
+:root{--navy:#20204b;--ink:#27264b;--muted:#646482;--pink:#f46b9b;--orange:#ffb36b;--purple:#8574ee;--cyan:#68d9df;--paper:#fff;--line:#e9e6f5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.7}
+a{color:#5b49c8;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:22px}.name{font-weight:800;letter-spacing:.035em;font-size:1.05rem;color:var(--navy)}.navlinks{display:flex;gap:22px;flex-wrap:wrap;font-size:.91rem}.navlinks a{color:#4f4d70}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#f9d9e8 0%,#e4dcff 48%,#d6f7f5 100%);padding:86px 0 82px}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.hero:before{width:330px;height:330px;right:-80px;top:-140px;background:rgba(255,255,255,.36)}.hero:after{width:210px;height:210px;right:16%;bottom:-150px;background:rgba(255,255,255,.3)}
+.hero-content{position:relative;z-index:1}.eyebrow{display:inline-block;background:#fff9;border:1px solid #fff;padding:6px 12px;border-radius:30px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:750;color:#4b4388}
+h1{font-size:clamp(2.8rem,7vw,5.1rem);line-height:1.06;letter-spacing:-.05em;margin:20px 0 18px;color:#24234d;font-weight:850}.lead{font-size:1.15rem;max-width:760px;color:#4d4a70;margin:0 0 28px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-block;padding:11px 18px;border:1px solid #6553ce;border-radius:7px;font-weight:700;transition:transform .15s,box-shadow .15s}.btn:hover{transform:translateY(-2px);text-decoration:none;box-shadow:0 7px 18px #4636a522}.btn.primary{background:#6553ce;color:white}.btn.secondary{background:#ffffffb8;color:#4c3bb3;border-color:#ffffff}
+section{padding:66px 0;border-bottom:1px solid var(--line)}.section-head{margin-bottom:28px}.section-head h2{font-size:1.85rem;line-height:1.25;margin:0 0 8px;letter-spacing:-.025em;color:var(--navy)}.section-head p{color:var(--muted);margin:0;max-width:760px}
+.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:38px}.facts{border-top:1px solid var(--line)}.fact{padding:13px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:125px 1fr;gap:12px}.fact strong{font-size:.92rem;color:#5143a7}.fact span{color:var(--muted);font-size:.94rem}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{padding:24px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 5px 20px #32276b08;position:relative;overflow:hidden}.card:before{content:"";display:block;width:46px;height:4px;border-radius:5px;background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));margin-bottom:16px}.card h3{font-size:1.12rem;line-height:1.4;margin:0 0 5px;color:#2d2b59}.meta{font-size:.85rem;color:#7a7597;margin-bottom:12px}.card p{margin:0;color:#55536f}.tagline{font-size:.86rem;color:#6653c7;font-weight:700;margin-top:14px}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.skill{padding:21px 22px;background:linear-gradient(120deg,#fff2f7,#f7f4ff);border:1px solid #f0e8fb;border-radius:9px}.skill:nth-child(2){background:linear-gradient(120deg,#f0faff,#f4f1ff)}.skill:nth-child(3){background:linear-gradient(120deg,#fff8e9,#fff2f7)}.skill:nth-child(4){background:linear-gradient(120deg,#effcf8,#f4f1ff)}.skill h3{margin:0 0 6px;font-size:1rem;color:#4d419e}.skill p{margin:0;color:#55536f}
+.timeline{border-left:2px solid #ddd7fb;padding-left:24px;margin-left:7px}.entry{position:relative;padding:0 0 25px}.entry:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--pink);border:3px solid #fde7f0;left:-31px;top:8px}.entry h3{margin:0;font-size:1.02rem;color:#2d2b59}.entry .meta{margin:2px 0 6px}.entry p{margin:0;color:#55536f}
+.achievements{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 30px}.achievement{padding:15px 0;border-bottom:1px solid var(--line)}.achievement strong{display:block;color:#4d419e}.achievement span{color:var(--muted);font-size:.94rem}
+#contact{background:linear-gradient(120deg,#fbecf4,#f0edff,#e8fbfa)}.contact-box{background:#ffffffc9;padding:28px;border:1px solid #fff;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}.contact-box p{margin:4px 0;color:var(--muted)}footer{padding:22px 0;color:#77738f;font-size:.88rem;background:#fff}.footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:720px){.nav{align-items:flex-start;flex-direction:column;padding:14px 0}.navlinks{gap:12px 16px}.hero{padding:60px 0}.about-grid,.cards,.skills,.achievements{grid-template-columns:1fr}.fact{grid-template-columns:105px 1fr}section{padding:48px 0}.wrap{width:min(100% - 30px,1080px)}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="name">SHRI LAKSHMI G</div>
+  <nav class="navlinks" aria-label="Main navigation">
+    <a href="#about">About</a><a href="#education">Education</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-content">
+  <div class="eyebrow">Electronics and Communication Engineering · 2023–2027</div>
+  <h1>SHRI LAKSHMI G</h1>
+  <p class="lead">Engineering student exploring software development, embedded systems, IoT, and data-driven supply chain technology. I enjoy turning ideas into practical projects and continuously building skills through hands-on learning.</p>
+  <div class="actions"><a class="btn primary" href="#projects">Explore My Projects</a><a class="btn secondary" href="resume.pdf" target="_blank" rel="noopener">View Résumé</a><a class="btn secondary" href="mailto:shrilakshmiganesan@gmail.com">Contact Me</a></div>
+</div></section>
+<section id="about"><div class="wrap">
+  <div class="section-head"><h2>About Me</h2><p>My academic journey, interests, and approach to engineering and technology.</p></div>
+  <div class="about-grid">
+    <div><p>I am pursuing a Bachelor’s degree in Electronics and Communication Engineering at Saranathan College of Engineering, Anna University. My interests span electronics and hardware interfacing as well as programming, data analysis, and software-based solutions.</p><p>Through academic projects, technical programs, and independent development, I have explored sensor-based monitoring, IoT-enabled automation, network simulation, and supply chain forecasting. I like learning by building, testing, and improving ideas, while strengthening my programming and problem-solving abilities.</p></div>
+    <div class="facts">
+      <div class="fact"><strong>Degree</strong><span>B.E. Electronics and Communication Engineering</span></div>
+      <div class="fact"><strong>Institution</strong><span>Saranathan College of Engineering, Anna University</span></div>
+      <div class="fact"><strong>CGPA</strong><span>8.44 through Semester 6</span></div>
+      <div class="fact"><strong>Interests</strong><span>Software, IoT, embedded systems, data and supply chain analytics</span></div>
+    </div>
+  </div>
+</div></section>
+<section id="education"><div class="wrap"><div class="section-head"><h2>Education</h2><p>Academic foundation in electronics, communication systems, and engineering problem-solving.</p></div>
+  <div class="timeline">
+    <div class="entry"><h3>Bachelor’s in Electronics and Communication Engineering</h3><div class="meta">Saranathan College of Engineering, Anna University · June 2023 – June 2027</div><p>CGPA: 8.44 through the sixth semester.</p></div>
+    <div class="entry"><h3>Higher Secondary Certificate (HSC)</h3><div class="meta">Montfort School, CBSE · 2022–2023</div><p>Score: 80.8%.</p></div>
+    <div class="entry"><h3>Secondary School Leaving Certificate (SSLC)</h3><div class="meta">Montfort School, CBSE · 2020–2021</div><p>Score: 92.2%.</p></div>
+  </div>
+</div></section>
+<section id="skills"><div class="wrap"><div class="section-head"><h2>Technical Skills</h2><p>Skills and tools developed through coursework, projects, and technical training.</p></div>
+  <div class="skills">
+    <div class="skill"><h3>Programming and Software</h3><p>Java (intermediate), Python, basic Data Structures, HTML, CSS, Microsoft Excel.</p></div>
+    <div class="skill"><h3>Embedded Systems and Electronics</h3><p>Arduino, ESP32, sensor interfacing, microcontroller-based design, digital electronics.</p></div>
+    <div class="skill"><h3>Communication Systems</h3><p>Analog and digital communication systems, telecommunications fundamentals, optical fibre communication.</p></div>
+    <div class="skill"><h3>Data and Supply Chain</h3><p>Supply chain analytics, demand planning concepts, inventory analysis, and forecasting dashboards.</p></div>
+  </div>
+</div></section>
+<section id="projects"><div class="wrap"><div class="section-head"><h2>Projects</h2><p>Selected work that combines engineering, software implementation, and data-driven decision support.</p></div>
+  <div class="cards">
+    <article class="card"><h3>ChainVision AI — Supply Chain Forecasting and Inventory Optimisation</h3><div class="meta">September–October 2026 · React, Python, Flask</div><p>Developed a full-stack supply chain intelligence platform to forecast 30-day product demand, analyse inventory levels, calculate reorder points, and recommend order quantities. Includes dashboards for demand analytics, inventory risk alerts, and purchase planning.</p><div class="tagline"><a href="https://ai-supply-chain-forecasting.vercel.app/" target="_blank" rel="noopener">View Live Project ↗</a></div></article>
+    <article class="card"><h3>Water Monitoring System using ESP32</h3><div class="meta">July–August 2026 · ESP32, sensors, IoT</div><p>Developed a smart monitoring system integrating sensors for water level, flow, pH, TDS, turbidity, and temperature. Supports real-time monitoring, water-quality assessment, and status alerts.</p><div class="tagline">Embedded Systems · Sensor Integration</div></article>
+    <article class="card"><h3>Door Display System using Arduino</h3><div class="meta">June 2026 · Arduino</div><p>Designed and implemented an Arduino-based digital display for automated information presentation, with the aim of improving accessibility and convenience.</p><div class="tagline"><a href="https://github.com/shrilakshmi2005/Doordisplay_system" target="_blank" rel="noopener">View Source on GitHub ↗</a></div></article>
+    <article class="card"><h3>Mininet-Based Weather Prediction System</h3><div class="meta">March–April 2026 · Python, VirtualBox, SDN</div><p>Developed a Python-based weather prediction project using Mininet as part of a Software-Defined Networking project, exploring network simulation and intelligent data processing.</p><div class="tagline">Python · Network Simulation · SDN</div></article>
+    <article class="card"><h3>Smart Irrigation System using ESP32 and IoT</h3><div class="meta">November–December 2025 · ESP32, soil-moisture sensor</div><p>Built an IoT-enabled irrigation system using soil-moisture sensing to automate irrigation based on real-time soil conditions and support efficient water use.</p><div class="tagline"><a href="https://github.com/shrilakshmi2005/smart_irrigation_system" target="_blank" rel="noopener">View Source on GitHub ↗</a></div></article>
+  </div>
+</div></section>
+<section id="experience"><div class="wrap"><div class="section-head"><h2>Internships and Technical Programs</h2><p>Practical exposure and structured learning in embedded systems, telecommunications, and data technologies.</p></div>
+  <div class="timeline">
+    <div class="entry"><h3>Code Bind Technologies Internship</h3><div class="meta">June 2026 · Embedded Systems and IoT</div><p>Training in Arduino/ESP32, sensor interfacing, Embedded C, and hardware debugging.</p></div>
+    <div class="entry"><h3>BSNL Internship</h3><div class="meta">May 2026 · Telecommunication Networks</div><p>Exposure to telecommunications networks, optical fibre communication, broadband technologies, and network operations.</p></div>
+    <div class="entry"><h3>AI+X Workshop — Data Engineering to Agentic Intelligence</h3><div class="meta">July 2026 · IEEE India Council and MathWorks</div><p>Participated in a technical workshop focused on data engineering and emerging AI concepts.</p></div>
+    <div class="entry"><h3>Data Science with Python Workshop</h3><div class="meta">March 2025 · National Institute of Technology, Tiruchirappalli</div><p>Participated in technical learning focused on Python and data science.</p></div>
+  </div>
+</div></section>
+<section id="achievements"><div class="wrap"><div class="section-head"><h2>Achievements</h2><p>Selected academic, technical, and communication milestones.</p></div>
+  <div class="achievements">
+    <div class="achievement"><strong>Research Publication — IJIRICE</strong><span>“Design and Implementation of a Smart Irrigation System Using Soil Moisture Sensor and IoT” · December 2025</span></div>
+    <div class="achievement"><strong>Smart India Hackathon</strong><span>Participant in a 24-hour hackathon · October 2025</span></div>
+    <div class="achievement"><strong>Paper Presentation Competition</strong><span>Third Prize · May 2025</span></div>
+    <div class="achievement"><strong>ICT Academy Youth Talk</strong><span>Regional Finalist · October 2024</span></div>
+    <div class="achievement"><strong>English Speech Competition — Indian Red Cross Society (YRC)</strong><span>Second Prize · September 2024</span></div>
+    <div class="achievement"><strong>Space Spectrum IDEATHON</strong><span>Participant · August 2026</span></div>
+    <div class="achievement"><strong>Ignite Bootcamp — Venture Idea Development</strong><span>Wadhwani Foundation · March 2026</span></div>
+    <div class="achievement"><strong>Technical Conferences and IEEE Programs</strong><span>Participation in wireless communication, VLSI, aerospace and navigation events, and IEEE Women in Engineering activities.</span></div>
+  </div>
+</div></section>
+<section id="certifications"><div class="wrap"><div class="section-head"><h2>Certifications and Learning</h2><p>Learning across programming, technology, business, and supply chain operations.</p></div>
+  <div class="cards">
+    <article class="card"><h3>Programming and Technology</h3><p>Java Object-Oriented Programming; Programming Foundations: Algorithms; HTML, CSS and JavaScript; Responsive Web Design; Python Programming; Embedded Systems with AI; Arduino Training; Programming with C and C++.</p></article>
+    <article class="card"><h3>Supply Chain, Data and Business</h3><p>Demand Planning; Supply Chain Analytics; Excel for Supply Chain Forecasting; Supply Chain Planning; Logistics, Inventory and Warehousing; Supply Chain KPI Metrics and Analytics; Excel for Accounting.</p></article>
+    <article class="card"><h3>AI and Productivity</h3><p>Integrating Generative AI into Business Strategy; Generative AI Productivity Skills; Introduction to Prompt Engineering for Generative AI; Generative AI: Creative Content, Opportunities and Ethics.</p></article>
+    <article class="card"><h3>Additional Learning</h3><p>Engineering with Snowflake and other technical workshops and professional development programs.</p></article>
+  </div>
+</div></section>
+<section id="contact"><div class="wrap"><div class="section-head"><h2>Contact</h2><p>Connect with me about internships, graduate opportunities, projects, and technology.</p></div>
+  <div class="contact-box"><div><h3 style="margin:0;color:#2d2b59">SHRI LAKSHMI G</h3><p>Electronics and Communication Engineering · 2023–2027</p><p><a href="mailto:shrilakshmiganesan@gmail.com">shrilakshmiganesan@gmail.com</a> · <a href="tel:+919385493082">+91 93854 93082</a></p></div><div class="actions"><a class="btn primary" href="mailto:shrilakshmiganesan@gmail.com">Email Me</a><a class="btn secondary" href="https://github.com/shrilakshmi2005" target="_blank" rel="noopener">GitHub</a></div></div>
+</div></section>
+</main>
+<footer><div class="wrap footer-inner"><span>SHRI LAKSHMI G</span><span><a href="#about">Back to top ↑</a></span></div></footer>
+</body></html>
